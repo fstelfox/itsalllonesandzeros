@@ -46,6 +46,17 @@ public class Sets {
 		return score;
 	}
 
+	void findOrder() {
+		int [] temp = randOrder();
+		int[] highScore =temp;
+		for(int i = 0; i < 5; i++) {
+			temp = randOrder();
+			if(score(temp) > score(highScore)) {
+				highScore = temp;
+			}
+		}
+		reOrder(highScore);
+	}
 
 
 }
