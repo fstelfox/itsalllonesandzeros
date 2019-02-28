@@ -87,18 +87,30 @@ public class Slide{
     }
 
 
-    public void compare(Slide a){
-      int both = 0, uniqueA = 0, uniqueThis = 0;
+    public int compare(Slide a){
+    int both = 0, uniqueA = 0, uniqueThis = 0;
 
-      for(int i = 0; i < this.noTags; i++){
-        for(int j = 0; j < a.getNoTags(); j++){
-          if(this.tags[i].equals(a.getTags()[j])){
-            both++;
-          }
+    for(int i = 0; i < this.noTags; i++){
+      for(int j = 0; j < a.getNoTags(); j++){
+        if(this.tags[i].equals(a.getTags()[j])){
+          both++;
         }
       }
-      uniqueA = a.getNoTags()-both;
-      uniqueThis = noTags-both;
-
     }
+    uniqueA = a.getNoTags()-both;
+    uniqueThis = noTags-both;
+    int lowest;
+    if(uniqueA<uniqueThis){
+      lowest = uniqueA;
+    }
+    else{
+      lowest = uniqueThis;
+    }
+    if(both<lowest){
+      return both;
+    }
+    else{
+      return lowest;
+    }
+  }
 }
