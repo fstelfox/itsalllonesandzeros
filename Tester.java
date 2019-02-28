@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -5,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Main {
+public class Tester {
 	private int noImages;
 	private String[] tags;
 	private int noTags;
@@ -16,17 +17,17 @@ public class Main {
 
 
 	private boolean vertical;
-	public Main() {
+	public Tester() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public static void main(String[] args) {
-		Main main = new Main();
+		Tester tester = new Tester();
 		
 		
-		main.readInput();
+		tester.readInput();
 		
-		Sets[] sets = new Sets[(main.getNoImages())/8];
+		Sets[] sets = new Sets[(int) Math.ceil((tester.getNoImages())/8)];
 
 
 	}
@@ -94,6 +95,16 @@ public class Main {
 		
 	}
 	
-	
+	public void verticalImage(Image img)
+	{
+		if(tempVertical == null)
+		{
+			tempVertical = img;
+		}
+		else
+		{
+			Slide slide = new Slide(tempVertical, img);
+		}
+	}
 
 }
