@@ -16,7 +16,9 @@ public class Slide{
 
     Slide(Image a, Image b){
       vertical = true;
-      pic = {a,b};
+      pic = new Image[2]();
+      pic[0] = a;
+      pic[1] = b;
 
       HashSet<String> set = new HashSet<>();
       set.addAll(Arrays.asList(a.getTags()));
@@ -39,7 +41,19 @@ public class Slide{
       }
       uniqueA = a.getNoTags()-both;
       uniqueThis = noTags-both;
-
+      int lowest;
+      if(uniqueA<uniqueThis){
+        lowest = uniqueA;
+      }
+      else{
+        lowest = uniqueThis;
+      }
+      if(both<lowest){
+        return both;
+      }
+      else{
+        return lowest;
+      }
     }
 
 
