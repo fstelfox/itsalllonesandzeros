@@ -3,14 +3,71 @@ import java.util.HashSet;
 
 public class Slide{
     private Image[] pic;
-  	private boolean verticle;
-  	private int noTags;
+  	private boolean vertical;
+  	/**
+	 * @return the pic
+	 */
+	public Image[] getPic() {
+		return pic;
+	}
+
+	/**
+	 * @param pic the pic to set
+	 */
+	public void setPic(Image[] pic) {
+		this.pic = pic;
+	}
+
+	/**
+	 * @return the vertical
+	 */
+	public boolean isVertical() {
+		return vertical;
+	}
+
+	/**
+	 * @param vertical the vertical to set
+	 */
+	public void setVertical(boolean vertical) {
+		this.vertical = vertical;
+	}
+
+	/**
+	 * @return the noTags
+	 */
+	public int getNoTags() {
+		return noTags;
+	}
+
+	/**
+	 * @param noTags the noTags to set
+	 */
+	public void setNoTags(int noTags) {
+		this.noTags = noTags;
+	}
+
+	/**
+	 * @return the tags
+	 */
+	public String[] getTags() {
+		return tags;
+	}
+
+	/**
+	 * @param tags the tags to set
+	 */
+	public void setTags(String[] tags) {
+		this.tags = tags;
+	}
+
+
+	private int noTags;
   	private String[] tags;
 
     Slide(Image img){
       vertical = false;
       pic = img;
-      noTags = img.getNoTags();
+      noTags = img.getNumTags();
       tags = img.getTags();
     }
 
@@ -29,7 +86,7 @@ public class Slide{
     }
 
 
-    public int compare(Slide a){
+    public void compare(Slide a){
       int both = 0, uniqueA = 0, uniqueThis = 0;
 
       for(int i = 0; i < this.noTags; i++){
@@ -55,60 +112,4 @@ public class Slide{
         return lowest;
       }
     }
-
-
-
-
-
-
-
-
-  	/**
-  	 * @return the pic
-  	 */
-  	public Image[] getPic() {
-  		return pic;
-  	}
-  	/**
-  	 * @param pic the pic to set
-  	 */
-  	public void setPic(Image[] pic) {
-  		this.pic = pic;
-  	}
-  	/**
-  	 * @return the verticle
-  	 */
-  	public boolean isVerticle() {
-  		return verticle;
-  	}
-  	/**
-  	 * @param verticle the verticle to set
-  	 */
-  	public void setVerticle(boolean verticle) {
-  		this.verticle = verticle;
-  	}
-  	/**
-  	 * @return the noTags
-  	 */
-  	public int getNoTags() {
-  		return noTags;
-  	}
-  	/**
-  	 * @param noTags the noTags to set
-  	 */
-  	public void setNoTags(int noTags) {
-  		this.noTags = noTags;
-  	}
-  	/**
-  	 * @return the tags
-  	 */
-  	public String[] getTags() {
-  		return tags;
-  	}
-  	/**
-  	 * @param tags the tags to set
-  	 */
-  	public void setTags(String[] tags) {
-  		this.tags = tags;
-  	}
 }
