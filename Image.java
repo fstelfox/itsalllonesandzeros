@@ -5,6 +5,7 @@ public class Image {
 	private int numTags;
 	private String[] tags;
 	private boolean vertical;
+	private int index;
 	
 	public Image(int numTags, String[] tags, boolean vertical)
 	{
